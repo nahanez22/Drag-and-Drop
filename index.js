@@ -1,9 +1,9 @@
 const parrafos = document.querySelectorAll(".parrafo");
 const secciones = document.querySelectorAll(".seccion");
+const trash = document.querySelector(".trash");
 
 parrafos.forEach((parrafo) => {
   parrafo.addEventListener("dragstart", () => {
-    console.log(`Estoy arrastrando el parrafo ${parrafo.innerText}`);
     parrafo.classList.add("dragging");
     event.dataTransfer.setData("id", parrafo.id);
     const elemento_fantasma = document.querySelector(".imagen-fantasma");
@@ -17,8 +17,8 @@ parrafos.forEach((parrafo) => {
 });
 
 secciones.forEach((seccion) => {
-  seccion.addEventListener("dragover", (evento) => {
-    evento.preventDefault();
+  seccion.addEventListener("dragover", (event) => {
+    event.preventDefault();
     event.dataTransfer.dropEffect = "none";
     //console.log("Drag Over");
   });
@@ -30,4 +30,14 @@ secciones.forEach((seccion) => {
     const parrafo = document.getElementById(id_parrafo);
     seccion.appendChild(parrafo);
   });
+});
+
+trash.addEventListener("dragover", (event) => {
+  event.preventDefault();
+  event.dataTransfer.dropEffect = "copy";
+});
+
+trash.addEventListener("drop", (event) => {
+  const id_parrafo = event.dataTransfer.getData("id");
+  document.getElementById(id_parrafo).remove();
 });
