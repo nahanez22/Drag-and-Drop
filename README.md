@@ -1,11 +1,12 @@
 # Drag-and-Drop
 
 Practicing Drag and Drop
-  This application allows you to drag a piece of the puzzle to the trash can so that it can be deleted.
+
+This application allows you to drag a piece of the puzzle to the trash can so that it can be deleted.
   
   Architecture;
-  # node js
-  # javascript
+  # Node js
+  # JavaSript
   #HTML
   #CCS
  
