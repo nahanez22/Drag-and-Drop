@@ -7,8 +7,8 @@ This application allows you to drag a piece of the puzzle to the trash can so th
   Architecture;
   # Node js
   # JavaSript
-  #HTML
-  #CCS
+  # HTML
+  # CCS
  
 Resources put into practice;
  
